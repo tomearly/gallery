@@ -1,8 +1,5 @@
 <template>
-  <div 
-    id="app"
-    v-if="photos.results"
-    class="gallery">
+  <div id="app" v-if="photos.results" class="gallery">
     <thumbnail
       v-for="photo of photos.results"
       :key="photo.id"
@@ -10,7 +7,8 @@
       :profile-url="photo.user.links.html"
       :thumb-url="photo.urls.thumb"
       :thumb-link-url="photo.links.html"
-      :first-name="photo.user.first_name">
+      :first-name="photo.user.first_name"
+    >
     </thumbnail>
   </div>
 </template>
