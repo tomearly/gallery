@@ -1,6 +1,10 @@
 <template>
   <div class="thumbnail">
-    <a :href="thumbLinkUrl"><img :alt="altDescription" :src="thumbUrl"/></a>
+    <a :href="thumbLinkUrl">
+      <div class="thumbnail-image">
+        <img :alt="altDescription" :src="thumbUrl" />
+      </div>
+    </a>
     <ThumbnailOverlay
       class="thumbnail-overlay"
       :first-name="firstName"
@@ -38,9 +42,29 @@ export default {
 </script>
 
 <style lang="scss">
-.thumbnail-overlay {
+.thumbnail {
   position: relative;
-  top: -30px;
+}
+
+.thumbnail-image {
+  overflow: hidden;
+  height: 133px;
+  width: 200px;
+}
+
+.thumbnail-image img {
+  transition: transform 0.5s ease; /* Animation */
+}
+
+.thumbnail-image:hover img {
+  transform: scale(1.05);
+  position: relative;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background-color: rgba(255, 255, 255, 0.75);
   padding: 8px;
 }

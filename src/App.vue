@@ -1,26 +1,15 @@
 <template>
-  <div id="app" v-if="photos.results" class="gallery">
-    <thumbnail
-      v-for="photo of photos.results"
-      :key="photo.id"
-      :alt-description="photo.alt_description"
-      :profile-url="photo.user.links.html"
-      :thumb-url="photo.urls.thumb"
-      :thumb-link-url="photo.links.html"
-      :first-name="photo.user.first_name"
-    >
-    </thumbnail>
-  </div>
+  <gallery :photos="photos"> </gallery>
 </template>
 
 <script>
 import dataService from "@/api/dataService";
-import Thumbnail from "@/components/Thumbnail";
+import Gallery from "@/components/Gallery";
 
 export default {
   name: "App",
   components: {
-    Thumbnail
+    Gallery
   },
   mounted() {
     this.loadPhotos();
