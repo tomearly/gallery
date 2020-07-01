@@ -4,25 +4,26 @@
 
 <script>
 export default {
-	props: {
-		firstName: {
-			type: String,
-		},
-		profileUrl: {
-			type: String,
-		}
-	}
-}
+  props: {
+    firstName: {
+      type: String
+    },
+    profileUrl: {
+      type: String
+    }
+  }
+};
 </script>
 
 <style lang="scss">
 .first-name {
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
 }
 
-a, a:visited {
-	text-decoration: none;
-	color: black;
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 </style>
