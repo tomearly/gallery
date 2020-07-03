@@ -3,6 +3,7 @@
     <thumbnail
       v-for="photo of photos.results"
       :key="photo.id"
+      :colour="photo.color"
       :alt-description="photo.alt_description"
       :profile-url="photo.user.links.html"
       :thumb-url="photo.urls.thumb"

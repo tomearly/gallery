@@ -1,7 +1,7 @@
 <template>
   <div class="thumbnail">
     <a :href="thumbLinkUrl">
-      <div class="thumbnail-image">
+      <div class="thumbnail-image" :style="style">
         <img :alt="altDescription" :src="thumbUrl" />
       </div>
     </a>
@@ -22,6 +22,9 @@ export default {
     ThumbnailOverlay
   },
   props: {
+    colour: {
+      type: String
+    },
     altDescription: {
       type: String
     },
@@ -37,7 +40,12 @@ export default {
     firstName: {
       type: String
     }
-  }
+  },
+  computed: {
+    style () {
+      return 'border: 2px solid ' + this.colour;
+    }
+  },
 };
 </script>
 

@@ -17,7 +17,7 @@ export default {
   methods: {
     async loadPhotos() {
       this.photos = await dataService.getPhotos(
-        "query=paris&color=black_and_white&orientation=landscape"
+        "query=paris&orientation=landscape"
       );
     }
   },
